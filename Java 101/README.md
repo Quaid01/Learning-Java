@@ -1,0 +1,1 @@
+(Link to guide)[https://sciborgs.github.io/SciGuidesSite/projects/intro-to-programming/Java101/]
