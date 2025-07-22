@@ -1,9 +1,9 @@
 public class Main {
    public static void main(String[] args) {
         System.out.println("Hello World");
-        int array[] = {1,1,3};
-        int k = 1;
-        System.out.println(PracticeProblems.countOccurences(array, k));
+        int array[][] = {{1,2},{3,4,5},{0,-5}};
+        System.out.println("ok");
+        System.out.println(PracticeProblems.fib(6));
     }
     static void printIntArray(int[] arr) {
     String str = "(";
