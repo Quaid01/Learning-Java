@@ -37,11 +37,11 @@ public class Square implements Shape{
     public boolean isOn(Point p) {
         boolean on = false;
         // checks for top and bottom sides
-        if (corner.x < p.x && p.x < corner.x+sideLength && (p.y == corner.y || p.y == corner.y+sideLength)) {
+        if (corner.x <= p.x && p.x <= corner.x+sideLength && (p.y == corner.y || p.y == corner.y+sideLength)) {
             on = true;
         }
         // checks for left and right
-        if (corner.y < p.y && p.y < corner.y+sideLength && (p.x == corner.x || p.x == corner.x+sideLength)) {
+        if (corner.y <= p.y && p.y <= corner.y+sideLength && (p.x == corner.x || p.x == corner.x+sideLength)) {
             on = true;
         }
         return on;

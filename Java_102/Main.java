@@ -5,12 +5,16 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        Shape[] shapes = {new Circle(new Point(1.8, -20), 2), 
-                  new Square(new Point(100, 2.1), 5.4),
-                  new Circle(new Point(0, 0), 1),
-                  new Circle(new Point(4, 9.123), 98.32),
-                  new Square(new Point(-321, 0), 0.02)};
-        System.out.println(sumArea(shapes));
+        LibraryItem[] thingies = {new Book("hi","1902","Bob",97), new DVD("Rad", "1928",1.28 )};
+        thingies[0].checkOut();
+        for (LibraryItem libraryItem : thingies) {
+            System.out.println(libraryItem.available());
+        }
+        System.out.println(availableItems(thingies));
+        returnAll(thingies);
+        for (LibraryItem libraryItem : thingies) {
+            System.out.println(libraryItem.available());
+        }
     }
 
     static double sumArea(Shape[] shapes) {
@@ -19,5 +23,21 @@ public class Main {
         sum += shape.area();
     }
     return sum;
-}
+    }
+
+    public static void returnAll(LibraryItem[] items) {
+        for (LibraryItem thing : items) {
+            thing.returnItem();
+        }
+    }
+
+    public static ArrayList<LibraryItem> availableItems(LibraryItem[] items) {
+        ArrayList<LibraryItem> things = new ArrayList<>(items.length);
+        for (LibraryItem libraryItem : items) {
+            if (libraryItem.available()){
+                things.add(libraryItem);
+            }
+        }
+        return things;
+    }
 }
